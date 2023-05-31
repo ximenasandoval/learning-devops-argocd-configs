@@ -15,7 +15,8 @@ spec:
         app: radio
     spec:
       containers:
-      - image: deploy-2023-05-15-2
-        name: deploy-2023-05-15-2
-        resources: {}
-        imagePullPolicy: Never
+        - image: 377225462902.dkr.ecr.us-east-1.amazonaws.com/learning-devops-sample-app:2ef6726
+          name: sample-app-radio
+          resources: {}
+      imagePullSecrets:
+        - name: regcred
