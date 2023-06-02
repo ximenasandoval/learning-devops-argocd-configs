@@ -18,5 +18,20 @@ spec:
         - image: 377225462902.dkr.ecr.us-east-1.amazonaws.com/learning-devops-sample-app:c82f9f4
           name: sample-app-radio
           resources: {}
+          env:
+            - name: VAULT_ADDR
+              value: 'http://vault.vault.svc.cluster.local:8200'
+            - name: VAULT_PATH
+              value: 'sample-app/env'
+            - name: VAULT_USR
+              valueFrom:
+                secretKeyRef:
+                  name: sample-app-env
+                  key: VAULT_USR
+            - name: VAULT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sample-app-env
+                  key: VAULT_PASSWORD
       imagePullSecrets:
         - name: regcred
