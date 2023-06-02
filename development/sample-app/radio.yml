@@ -15,7 +15,7 @@ spec:
         app: radio
     spec:
       containers:
-        - image: 377225462902.dkr.ecr.us-east-1.amazonaws.com/learning-devops-sample-app:c82f9f4
+        - image: 377225462902.dkr.ecr.us-east-1.amazonaws.com/learning-devops-sample-app:3cf4356
           name: sample-app-radio
           resources: {}
           env:
